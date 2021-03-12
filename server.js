@@ -38,7 +38,7 @@ router.get('/getticket',async (req,res) => {
         const db = client.db('ticket')
         let data = await db.collection('ticket').find().toArray()
         client.close();
-        res.status(400).json(data)
+        res.status(200).json(data)
     }
     catch(error){
         console.log(error)
