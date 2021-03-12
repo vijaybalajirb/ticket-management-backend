@@ -12,7 +12,7 @@ const mongoClient = mongodb.MongoClient;
 const DB_URL   = process.env.DBURL || "mongodb://127.0.0.1:27017";
 const port = process.env.PORT||3000;
 
-router.post('/create-ticket',async (req,res)=> {
+router.post('/createticket',async (req,res)=> {
     try{
         const client = await mongoClient.connect(DB_URL,{useUnifiedTopology:true})
         const db = client.db('ticket')
@@ -32,7 +32,7 @@ router.post('/create-ticket',async (req,res)=> {
  
 })
 
-router.get('/get-ticket',async (req,res) => {
+router.get('/getticket',async (req,res) => {
     try{
         const client =  await mongoClient.connect(DB_URL)
         const db = client.db('ticket')
@@ -46,7 +46,7 @@ router.get('/get-ticket',async (req,res) => {
     }
 })
 
-router.put('/edit-ticket/:id',async (req,res)=>{
+router.put('/editticket/:id',async (req,res)=>{
     try{
         const client = await mongoClient.connect(DB_URL)
         const db = client.db('ticket')
@@ -73,7 +73,7 @@ router.put('/edit-ticket/:id',async (req,res)=>{
     }
 })
 
-router.delete("/delete-ticket/:id",async (req,res)=>{
+router.delete("/deleteticket/:id",async (req,res)=>{
     try{
         const client = await mongoClient.connect(DB_URL,{useUnifiedTopology:true})
         const db = client.db('ticket')
